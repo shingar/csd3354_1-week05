@@ -46,14 +46,15 @@ namespace csd3354_1_week05
     {
 
         public Department(string dept_name)
-
         {
 
             DepartmentDescription = dept_name;
 
         }
 
-        public Department aDepartment;
+        public Department nextDepartment;
+
+        public Department previousDepartment;
 
         public string DepartmentDescription;
 
@@ -69,7 +70,15 @@ namespace csd3354_1_week05
 
         {
 
+            Department Books = new Department("Books");
+
             Department Kitchenware = new Department("Kitchenware");
+
+
+
+            Kitchenware.nextDepartment = Books;
+
+            Kitchenware.previousDepartment = FirstFloor;
 
             Department Books = new Department("Books");
 
@@ -87,15 +96,15 @@ namespace csd3354_1_week05
 
     {
 
-        Node Head;
+        public static Node Head;
 
-        Node FirstFloor;
+        public static Node FirstFloor;
 
-        Node SecondFloor;
+        public static Node SecondFloor;
 
-        Node ThirdFloor;
+        public static Node ThirdFloor;
 
-        Node FourthFloor;
+        public static Node FourthFloor;
 
 
 
