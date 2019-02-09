@@ -17,7 +17,9 @@ namespace csd3354_1_week05
 
             Elevator e = new Elevator();
 
-            e.run();
+            e.setup();
+
+            e.TraverseList();
 
         }
 
@@ -31,8 +33,6 @@ namespace csd3354_1_week05
 
         public Node() { }
 
-        public Node floor;
-
         public Node elevatorUp;
 
         public string FloorNumber;
@@ -41,9 +41,23 @@ namespace csd3354_1_week05
 
 
 
+    class Department
+
+    {
+
+        public Department aDepartment;
+
+
+
+    }
+
+
+
     class Elevator
 
     {
+
+        Node Head;
 
         Node FirstFloor;
 
@@ -55,7 +69,7 @@ namespace csd3354_1_week05
 
 
 
-        public void run()
+        public void setup()
 
         {
 
@@ -67,7 +81,7 @@ namespace csd3354_1_week05
 
             FourthFloor = new Node();
 
-
+            Head = FirstFloor;
 
             FirstFloor.FloorNumber = "First Floor";
 
@@ -84,6 +98,38 @@ namespace csd3354_1_week05
             FourthFloor.FloorNumber = "Fourth Floor";
 
             FourthFloor.elevatorUp = null;
+
+        }
+
+
+
+        public void TraverseList()
+
+        {
+
+            Node temp;
+
+            temp = Head;
+
+
+
+            // where am I going to start?
+
+
+
+            while (temp != null)
+
+            {
+
+                Console.WriteLine(temp.FloorNumber);
+
+                temp = temp.elevatorUp;
+
+
+
+            }
+
+
 
         }
 
